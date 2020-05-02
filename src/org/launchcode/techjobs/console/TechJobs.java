@@ -3,6 +3,8 @@ package org.launchcode.techjobs.console;
 import java.lang.reflect.Array;
 import java.util.*;
 
+import static org.launchcode.techjobs.console.JobData.findByValue;
+
 /**
  * Created by LaunchCode
  */
@@ -60,7 +62,7 @@ public class TechJobs {
                 String searchTerm = in.nextLine();
 
                 if (searchField.equals("all")) {
-                    System.out.println("Search all fields not yet implemented.");
+                    printJobs(JobData.findByValue(searchTerm));
                 } else {
                     printJobs(JobData.findByColumnAndValue(searchField, searchTerm));
                 }
